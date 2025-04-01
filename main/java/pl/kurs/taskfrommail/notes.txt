@@ -1,0 +1,15 @@
+male zadanko do zrobienia :)
+
+Celowo nie pisałem typow relacji tak zebys sam musiał przemyslec design.
+Dodatkowo spoko by bylo jakbys narysował diagram tej bazy - hint: jezeli zrobisz relacje,
+to z tego co kojarze w Dbeaver da sie z automatu wygenerowac diagram :)
+
+Stwórz aplikację do zarządzania biblioteką, w której użytkownicy mogą wypożyczać książki.
+W systemie powinna istnieć możliwość:
+
+- Przechowywania informacji o książkach (tytuł, autor, rok wydania).
+- Rejestrowania użytkowników biblioteki wraz z ich danymi (imię, nazwisko, email).
+- Śledzenia wypożyczeń książek przez użytkowników, z uwzględnieniem daty wypożyczenia i ewentualnej daty zwrotu.
+- Przypisywania książkom różnych kategorii tematycznych.
+- Ocenianie książek (kto, treść, kiedy, do jakiej książki)
+

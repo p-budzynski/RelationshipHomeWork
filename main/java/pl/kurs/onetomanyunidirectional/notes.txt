@@ -1,0 +1,2 @@
+Praca domowa:
+Dorobic relacje W OneToMany - relacja do osoby "posiadajacej koszyk" - jednokierunkowa
