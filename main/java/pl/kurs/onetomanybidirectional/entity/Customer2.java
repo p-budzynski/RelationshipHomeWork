@@ -26,15 +26,8 @@ public class Customer2 {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-            @JoinTable(name = "customer_shopping_carts",
-
-            joinColumns = {@JoinColumn(name="customer_id",
-                    referencedColumnName="id_customer")},
-
-            inverseJoinColumns = {@JoinColumn(name="shopping_carts_id",
-                    referencedColumnName="id_shopping_cart")}
-    )
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="customer_id", referencedColumnName="id_customer")
     private Set<ShoppingCart> shoppingCarts = new HashSet<>();
 
     public Customer2(String firstName, String lastName) {

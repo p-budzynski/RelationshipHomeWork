@@ -35,6 +35,9 @@ public class OneToManyBidirectional {
 
         customer2Dao.addShoppingCartsToCustomer(customer, shoppingCart);
 
+        System.out.println(shoppingCartDao.get(1L));
+        System.out.println("-----------------------------");
+
         System.out.println(customer2Dao.get(1L));
 
     }

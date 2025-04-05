@@ -37,6 +37,6 @@ public class OneToManyUnidirectional {
 
         System.out.println(customerDao.get(1L));
         System.out.println("---------------------------");
-        System.out.println(shoppingCart);
+        System.out.println(shoppingCartsDao.get(1L));
     }
 }

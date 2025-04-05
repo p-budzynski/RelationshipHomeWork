@@ -20,7 +20,7 @@ public class ShoppingCart {
     @Column(name = "id_shopping_cart")
     private Long id;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "shopping_carts_products",
 
             joinColumns = {@JoinColumn(name="shopping_cart_id",
