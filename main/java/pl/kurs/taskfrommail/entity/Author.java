@@ -30,8 +30,8 @@ public class Author {
     @Pattern(regexp = "^[0-9]{11}$")
     private String pesel;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    private Set<Book> bookSet = new HashSet<>();
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    private Set<Book> books = new HashSet<>();
 
     public Author(String firstName, String lastName, String pesel) {
         this.firstName = firstName;

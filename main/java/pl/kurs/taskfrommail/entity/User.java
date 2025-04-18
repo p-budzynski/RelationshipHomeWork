@@ -31,7 +31,7 @@ public class User {
     private String mail;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
-    private List<Opinion> opinionList = new ArrayList<>();
+    private List<Opinion> opinions = new ArrayList<>();
 
     public User(String firstName, String lastName, String mail) {
         this.firstName = firstName;

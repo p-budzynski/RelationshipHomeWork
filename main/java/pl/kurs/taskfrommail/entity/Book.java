@@ -26,8 +26,8 @@ public class Book {
     @Column(name = "year_of_publication", nullable = false)
     private Integer yearOfPublication;
 
-    @Column(name = "book_category", nullable = false)
-    @Enumerated(EnumType.STRING)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE})
+    @JoinColumn(name = "category_id", nullable = false)
     private BookCategory bookCategory;
 
     @ManyToOne
@@ -35,13 +35,14 @@ public class Book {
     private Author author;
 
     @OneToMany(mappedBy = "book")
-    private List<Opinion> opinionList = new ArrayList<>();
+    private List<Opinion> opinions = new ArrayList<>();
 
     public Book(String title, Integer yearOfPublication, BookCategory bookCategory, Author author) {
         this.title = title;
         this.yearOfPublication = yearOfPublication;
         this.bookCategory = bookCategory;
         this.author = author;
+        bookCategory.getBooks().add(this);
     }
 
     @Override
@@ -49,11 +50,11 @@ public class Book {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         Book book = (Book) object;
-        return Objects.equals(title, book.title) && Objects.equals(yearOfPublication, book.yearOfPublication) && bookCategory == book.bookCategory;
+        return Objects.equals(id, book.id) && Objects.equals(title, book.title) && Objects.equals(yearOfPublication, book.yearOfPublication) && Objects.equals(bookCategory, book.bookCategory) && Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, yearOfPublication, bookCategory);
+        return Objects.hash(id, title, yearOfPublication, bookCategory, author);
     }
 }
