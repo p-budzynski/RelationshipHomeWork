@@ -42,7 +42,6 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
         this.bookCategory = bookCategory;
         this.author = author;
-        bookCategory.getBooks().add(this);
     }
 
     @Override
